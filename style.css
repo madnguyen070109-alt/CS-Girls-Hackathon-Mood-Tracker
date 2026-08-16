@@ -6,6 +6,7 @@ root {
   --extra-color: #3423a6;
   --font-family: system-ui, sans-serif;
 }
+
 body {
   font-family: system-ui, sans-serif;
   padding: px;
@@ -16,5 +17,4 @@ body {
 }
 button {
   background-color: var(--button-color);
-  border: none;
 }
