@@ -28,6 +28,11 @@ button {
   cursor: pointer;
 }
 
-button .hidden {
+.hidden {
   display: none;
+}
+
+h1 {
+  color: var(--header-color);
+  font-family: var(--font-family);
 }
