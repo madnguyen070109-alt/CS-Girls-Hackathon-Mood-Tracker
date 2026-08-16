@@ -1,11 +1,20 @@
+root {
+  --header-color: #2e1760;
+  --background-color: #171738;
+  --text-color: #dff3e4;
+  --button-color: #ef946c;
+  --extra-color: #3423a6;
+  --font-family: system-ui, sans-serif;
+}
 body {
   font-family: system-ui, sans-serif;
   padding: px;
-  background-color: #124e67;
+  background-color: var(--background-color);
 }
 .playlist {
   display: none;
 }
 button {
-  background-color: #307e9f;
+  background-color: var(--button-color);
+  border: none;
 }
