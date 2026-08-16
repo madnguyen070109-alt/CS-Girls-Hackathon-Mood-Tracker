@@ -20,11 +20,22 @@ const tracks = [
   }
 
   player.addEventListener("ended", () => {
-    current = (current + 1) % tracks.length;
+    if (current < tracks.length - 1) {
+      current = (current + 1) % tracks.length
+    } else {
+      current = 0;
+    }
     loadTrack(current);
   });
 
 document.getElementById("startBtn").addEventListener("click", () => {
+    startBtn.classList.add("hidden");
+    stopBtn.classList.remove("hidden");
     loadTrack(current);
   }, { once: true });
+document.getElementById("stopBtn").addEventListener("click", () => {
+    stopBtn.classList.add("hidden");
+    startBtn.classList.remove("hidden");
+    player.pause();
+  } , { once: true });
   
