@@ -28,16 +28,22 @@ body {
   border-radius: 6px;
   cursor: pointer;
   object-fit: cover;
-  width:auto;
+  width: auto;
   padding: 5px;
 }
 
 
-.button:hover, .mood-button:hover {
+.button:hover {
   background-color: var(--button-color-hover);
 }
+.mood-rect .active {
+  background-color: var(--button-color-hover);
+  width: 60px;
+  height: auto;
+  border-radius: 6px;
+}
 .mood-rect {
-  width: 420px;
+  width: 500px;
   padding: 20px;
   background-color: var(--extra-color); 
   display: flex;
@@ -45,15 +51,20 @@ body {
   border-radius: 10px;
   border: 2px solid #1d84b5;
 }
-.mood-rect img {
-  background-color: var(--button-color);
+
+.mood-rect .button:hover {
+  background-color: var(--button-color-hover);
+}
+.mood-rect .button {
   width: 60px;
   height: auto;
   border-radius: 6px;
 }
 
-
 h1 {
   color: var(--text-color);
   font-family: var(--font-family);
+}
+.music .button {
+  width: 30px;
 }
