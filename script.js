@@ -103,8 +103,7 @@ document.getElementById("submit").addEventListener("click", () => {
   });
 }
 
-renderEntries();
-renderCalendar(); 
+
 const moodColors = {
   angry: "#c1440e",
   upset: "#df845c",
@@ -159,4 +158,6 @@ function renderCalendar() {
 
   cal.appendChild(grid);
 }
-  
+
+renderEntries();
+renderCalendar(); 
