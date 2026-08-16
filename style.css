@@ -1,4 +1,4 @@
-root {
+:root {
   --header-color: #2e1760;
   --background-color: #171738;
   --text-color: #dff3e4;
@@ -9,7 +9,6 @@ root {
 
 body {
   font-family: system-ui, sans-serif;
-  padding: px;
   background-color: var(--background-color);
 }
 .playlist {
