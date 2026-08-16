@@ -27,7 +27,7 @@ button {
   cursor: pointer;
 }
 
-.hidden {
+.button-hidden {
   display: none;
 }
 
