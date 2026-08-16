@@ -75,19 +75,21 @@ happy.addEventListener("click", () => {
 great.addEventListener("click", () => {
     selectMood("great", great);
 });
-document.getElementById("submit").addEventListener("click", () =>
-  {
-    if (!selectedMood) {
+document.getElementById("submit").addEventListener("click", () => {
+  if (!selectedMood) {
     alert("Pick a mood first!");
     return;
-    }
-    const today = new Date().toISOString().slice(0, 10); // "2026-08-16"
-    const entries = JSON.parse(localStorage.getItem("moodEntries") || "{}");
-    entries[today] = { mood: selectedMood, ts: Date.now() };
-    localStorage.setItem("moodEntries", JSON.stringify(entries));
+  }
 
-    renderEntries();
-  });
+  const today = new Date().toISOString().slice(0, 10);
+  const entries = JSON.parse(localStorage.getItem("moodEntries") || "{}");
+  entries[today] = { mood: selectedMood, ts: Date.now() };
+  localStorage.setItem("moodEntries", JSON.stringify(entries));
+
+  renderEntries();
+  renderCalendar(); 
+});
+
   function renderEntries() {
   const entries = JSON.parse(localStorage.getItem("moodEntries") || "{}");
   const wrap = document.querySelector(".entries");
@@ -101,7 +103,7 @@ document.getElementById("submit").addEventListener("click", () =>
 }
 
 renderEntries();
-
+renderCalendar(); 
 const moodColors = {
   angry: "#c1440e",
   upset: "#df845c",
