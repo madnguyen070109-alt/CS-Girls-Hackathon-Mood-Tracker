@@ -25,3 +25,6 @@ const tracks = [
   });
 
   loadTrack(current);
+  document.getElementById("startBtn").addEventListener("click", () => {
+    loadTrack(current);
+  }, { once: true });
