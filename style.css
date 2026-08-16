@@ -42,7 +42,7 @@ body {
   height: auto;
   border-radius: 6px;
 }
-.mood-rect, .tracker-rect, .entries {
+.mood-rect {
   width: 500px;
   padding: 20px;
   background-color: var(--extra-color); 
@@ -50,6 +50,27 @@ body {
   gap: 20px;
   border-radius: 10px;
   border: 2px solid #1d84b5;
+  color: var(--text-color);
+}
+.tracker-rect {
+  width: 500px;
+  padding: 20px;
+  background-color: var(--extra-color); 
+  display: flex;
+  gap: 20px;
+  border-radius: 10px;
+  border: 2px solid #1d84b5;
+  color: var(--text-color);
+}
+.entries {
+  width: 500px;
+  padding: 20px;
+  background-color: var(--extra-color); 
+  display: flex;
+  gap: 20px;
+  border-radius: 10px;
+  border: 2px solid #1d84b5;
+  color: var(--text-color);
 }
 
 .mood-rect .button:hover {
