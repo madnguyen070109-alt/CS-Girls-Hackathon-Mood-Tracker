@@ -2,6 +2,7 @@
   --background-color: #2e1760;
   --text-color: #dff3e4;
   --button-color: #ef946c;
+  --button-color-hover: #df845c;
   --extra-color: #3423a6;
   --font-family: system-ui, sans-serif;
 }
@@ -25,10 +26,26 @@ body {
   cursor: pointer;
   object-fit: cover;
   width: 30px;
-  padding: 5px 20px;
+  padding: 5px;
+}
+.button:hover {
+  background-color: var(--button-color-hover);
+}
+.mood-rect {
+  width: 420px;
+  padding: 20px;
+  background-color: var(--extra-color); 
+  display: flex;
+  gap: 20px;
+  border-radius: 10px;
+  border: 2px solid #1d84b5;
+}
+.mood-rect img {
+  width: 60px;
+  height: auto;
 }
 
-.hidden {
+.button-hidden {
   display: none;
 }
 
