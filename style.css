@@ -1,8 +1,11 @@
 body {
   font-family: system-ui, sans-serif;
   padding: px;
-  
+  background-color: #124e67;
 }
 .playlist {
-    display: none;
+  display: none;
+}
+button {
+  background-color: #307e9f;
 }
