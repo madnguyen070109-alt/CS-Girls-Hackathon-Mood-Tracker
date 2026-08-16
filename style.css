@@ -25,6 +25,8 @@ body {
   margin: 4px 2px;
   border-radius: 6px;
   cursor: pointer;
+  width: 50px;
+  height: auto;
 }
 
 .button-hidden {
