@@ -106,7 +106,7 @@ document.getElementById("submit").addEventListener("click", () => {
 
 const moodColors = {
   angry: "#c1440e",
-  upset: "#df845c",
+  upset: "#cf744c",
   ok:    "#ef946c",
   happy: "#7fb685",
   great: "#3fa34d",
