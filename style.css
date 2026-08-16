@@ -13,7 +13,7 @@ body {
 .playlist {
   display: none;
 }
-button {
+.button {
   background-color: var(--button-color);
   border: none;
   color: var(--text-color);
