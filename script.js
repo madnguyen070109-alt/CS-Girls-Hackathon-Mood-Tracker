@@ -32,10 +32,10 @@ document.getElementById("startBtn").addEventListener("click", () => {
     startBtn.classList.add("hidden");
     stopBtn.classList.remove("hidden");
     loadTrack(current);
-  }, { once: true });
+  });
 document.getElementById("stopBtn").addEventListener("click", () => {
     stopBtn.classList.add("hidden");
     startBtn.classList.remove("hidden");
     player.pause();
-  } , { once: true });
+  });
   
