@@ -101,4 +101,59 @@ document.getElementById("submit").addEventListener("click", () =>
 }
 
 renderEntries();
+
+const moodColors = {
+  angry: "#c1440e",
+  upset: "#df845c",
+  ok:    "#ef946c",
+  happy: "#7fb685",
+  great: "#3fa34d",
+};
+
+function renderCalendar() {
+  const entries = JSON.parse(localStorage.getItem("moodEntries") || "{}");
+  const cal = document.getElementById("calendar");
+  cal.innerHTML = "";
+
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = now.getMonth();
+
+  const label = document.createElement("p");
+  label.className = "cal-label";
+  label.textContent = now.toLocaleDateString(undefined, { month: "long", year: "numeric" });
+  cal.appendChild(label);
+
+  const grid = document.createElement("div");
+  grid.className = "cal-grid";
+
+  const firstDay = new Date(year, month, 1).getDay(); // 0 = Sunday
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const todayStr = now.toISOString().slice(0, 10);
+
+  for (let i = 0; i < firstDay; i++) {
+    const blank = document.createElement("div");
+    blank.className = "cal-cell blank";
+    grid.appendChild(blank);
+  }
+
+  for (let day = 1; day <= daysInMonth; day++) {
+    const dateStr = `${year}-${String(month + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+    const cell = document.createElement("div");
+    cell.className = "cal-cell";
+    cell.textContent = day;
+
+    if (dateStr === todayStr) cell.classList.add("today");
+
+    const entry = entries[dateStr];
+    if (entry) {
+      cell.style.backgroundColor = moodColors[entry.mood] || "#999";
+      cell.title = entry.mood;
+    }
+
+    grid.appendChild(cell);
+  }
+
+  cal.appendChild(grid);
+}
   
