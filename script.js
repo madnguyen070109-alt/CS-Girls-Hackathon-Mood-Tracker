@@ -24,7 +24,7 @@ const tracks = [
     loadTrack(current);
   });
 
-  loadTrack(current);
-  document.getElementById("startBtn").addEventListener("click", () => {
+document.getElementById("startBtn").addEventListener("click", () => {
     loadTrack(current);
   }, { once: true });
+  
