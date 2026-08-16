@@ -11,7 +11,7 @@ body {
   font-family: system-ui, sans-serif;
   background-color: var(--background-color);
 }
-.playlist, .hidden{
+.playlist, .hidden {
   display: none;
 }
 .button {
