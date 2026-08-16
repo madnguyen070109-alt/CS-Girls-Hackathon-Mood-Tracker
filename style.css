@@ -6,7 +6,6 @@
   --extra-color: #3423a6;
   --font-family: system-ui, sans-serif;
 }
-
 body {
   font-family: system-ui, sans-serif;
   background-color: var(--background-color);
@@ -17,55 +16,10 @@ body {
 .hidden {
   display: none;
 }
-.button {
-  background-color: var(--button-color);
-  border: none;
-  color: var(--text-color);
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  object-fit: cover;
-  width: auto;
-  padding: 5px;
-}
-
-
-.button:hover {
-  background-color: var(--button-color-hover);
-}
-.mood-rect .active {
-  background-color: var(--button-color-hover);
-  width: 60px;
-  height: auto;
-  border-radius: 6px;
-}
 .mood-rect {
-  width: 500px;
+  width: 470px;
   padding: 20px;
-  background-color: var(--extra-color); 
-  display: flex;
-  gap: 20px;
-  border-radius: 10px;
-  border: 2px solid #1d84b5;
-  color: var(--text-color);
-}
-.tracker-rect {
-  width: 500px;
-  padding: 20px;
-  background-color: var(--extra-color); 
-  display: flex;
-  gap: 20px;
-  border-radius: 10px;
-  border: 2px solid #1d84b5;
-  color: var(--text-color);
-}
-.entries {
-  width: 500px;
-  padding: 20px;
-  background-color: var(--extra-color); 
+  background-color: var(--extra-color);
   display: flex;
   gap: 20px;
   border-radius: 10px;
@@ -73,45 +27,54 @@ body {
   color: var(--text-color);
 }
 
-.mood-rect .button:hover {
-  background-color: var(--button-color-hover);
-}
-.mood-rect .button {
-  width: 60px;
-  height: auto;
-  border-radius: 6px;
-}
-
-h1 {
-  color: var(--text-color);
-  font-family: var(--font-family);
-}
-.music .button {
-  width: 30px;
-}
-
-.tracker-rect {
-  width: 500px;
+/* Outer wrapper holds the view toggle, streak line, and the calendar box.
+   This is a SEPARATE element from #calendar so JS can safely wipe
+   #calendar's contents on every render without deleting the toggle/streak. */
+.tracker-wrap {
+  width: 470px;
   padding: 20px;
   background-color: var(--extra-color);
   border-radius: 10px;
   border: 2px solid #1d84b5;
+  color: var(--text-color);
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
+.tracker-rect {
+  /* the actual calendar render target — no border/background of its own,
+     it just sits inside .tracker-wrap */
+}
+
+.entries {
+  width: 470px;
+  padding: 20px;
+  background-color: var(--extra-color);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 10px;
+  border: 2px solid #1d84b5;
+  color: var(--text-color);
+  margin-top: 20px;
+}
+h1 {
+  color: var(--text-color);
+  font-family: var(--font-family);
+}
 .cal-label {
   color: var(--text-color);
   font-family: var(--font-family);
   margin: 0 0 10px;
   font-size: 14px;
 }
-
 .cal-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
   gap: 6px;
 }
-
 .cal-cell {
   aspect-ratio: 1;
   border-radius: 6px;
@@ -123,12 +86,83 @@ h1 {
   justify-content: flex-start;
   padding: 3px;
 }
-
 .cal-cell.blank {
   background: none;
 }
-
 .cal-cell.today {
   box-shadow: 0 0 0 2px var(--button-color) inset;
 }
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 15px;
+  align-items: center;
+  text-align: center;
+}
+.mood-rect img, .mood-rect .button {
+  height: 60px;
+  width: 60px;
+  align-items: center;
+  justify-content: center;
+}
+.music img{
+  width: 30px;
+  aspect-ratio: 1/1;
+}
 
+.button {
+  border-radius: 6px;
+  background-color: var(--button-color);
+}
+
+.active {
+  background-color: var(--button-color-hover);
+  border-radius: 6px;
+}
+.view-toggle {
+  display: flex;
+  gap: 8px;
+}
+.view-btn {
+  background: var(--background-color);
+  color: var(--text-color);
+  border: 1px solid #1d84b5;
+  border-radius: 6px;
+  padding: 6px 14px;
+  font-size: 13px;
+  cursor: pointer;
+}
+.view-btn.active {
+  background: var(--button-color);
+  color: var(--extra-color);
+  font-weight: 600;
+}
+
+.year-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.year-month-label {
+  color: var(--text-color);
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+.year-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 2px;
+}
+.year-dot {
+  aspect-ratio: 1;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.08);
+}
+.streak {
+  color: var(--text-color);
+  font-size: 14px;
+  font-weight: 600;
+}

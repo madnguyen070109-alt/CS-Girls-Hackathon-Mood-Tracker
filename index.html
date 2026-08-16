@@ -7,22 +7,32 @@
     </head>
     <body>
         <h1>Mood Tracker Journal</h1>
-        <div class="music"></div>
-            <img id="startBtn" class="button" img src="assets/Play.png">
-            <img id="stopBtn" class="hidden" img src="assets/Pause.png">
+        <div class="music">
+            <img id="startBtn" class="button" src="assets/Play.png" alt="Play">
+            <img id="stopBtn" class="hidden" src="assets/Pause.png" alt="Pause">
         </div>
         <audio controls id="player" class="playlist"></audio>
         <div class="center">
             <form class="mood-rect">
-                <img class="button" id="angry" src="assets/Angry Wheat.png">
-                <img class="button" id="upset" src="assets/Upset Wheat.png">
-                <img class="button" id="ok" src="assets/Ok Wheat.png">
-                <img class="button" id="happy" src="assets/Happy Wheat.png">
-                <img class="button" id="great" src="assets/Great Wheat.png">
-                <button class="button" id="submit">Save</button>
+                <img class="button" id="angry" src="assets/Angry Wheat.png" alt="Angry">
+                <img class="button" id="upset" src="assets/Upset Wheat.png" alt="Upset">
+                <img class="button" id="ok" src="assets/Ok Wheat.png" alt="Ok">
+                <img class="button" id="happy" src="assets/Happy Wheat.png" alt="Happy">
+                <img class="button" id="great" src="assets/Great Wheat.png" alt="Great">
+                <button class="button" id="submit" type="button">Save</button>
             </form>
-            <div class="tracker-rect" id="calendar"></div>
+
+            <div class="tracker-wrap">
+              <div class="view-toggle">
+                <button type="button" class="view-btn active" data-view="week">Week</button>
+                <button type="button" class="view-btn" data-view="month">Month</button>
+                <button type="button" class="view-btn" data-view="year">Year</button>
+              </div>
+              <div id="streakDisplay" class="streak"></div>
+              <div class="tracker-rect" id="calendar"></div>
+            </div>
+
             <div class="entries"></div>
-        </div> 
+        </div>
     </body>
 </html>
