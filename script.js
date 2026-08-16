@@ -1,13 +1,14 @@
 const tracks = [
-    "assets/audio/Lofi Part 1.mp3",
-    "assets/audio/Lofi Part 2.mp3", 
-    "assets/audio/Lofi Part 3.mp3", 
-    "assets/audio/Lofi Part 4.mp3", 
-    "assets/audio/Lofi Part 5.mp3",
-    "assets/audio/Lofi Part 6.mp3",
-    "assets/audio/Lofi Part 7.mp3",
-    "assets/audio/Lofi Part 8.mp3", 
-    "assets/audio/Lofi Part 9.mp3"
+    "assets/Lofi Part 1.mp3",
+    "assets/Lofi Part 2.mp3", 
+    "assets/Lofi Part 3.mp3", 
+    "assets/Lofi Part 4.mp3", 
+    "assets/Lofi Part 5.mp3", 
+    "assets/Lofi Part 6.mp3", 
+    "assets/Lofi Part 7.mp3", 
+    "assets/Lofi Part 8.mp3", 
+    "assets/Lofi Part 9.mp3", 
+
   
   ];
 const angry = document.getElementById("angry");
