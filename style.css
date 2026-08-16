@@ -89,3 +89,45 @@ h1 {
 .music .button {
   width: 30px;
 }
+
+.tracker-rect {
+  width: 500px;
+  padding: 20px;
+  background-color: var(--extra-color);
+  border-radius: 10px;
+  border: 2px solid #1d84b5;
+  margin-top: 20px;
+}
+
+.cal-label {
+  color: var(--text-color);
+  font-family: var(--font-family);
+  margin: 0 0 10px;
+  font-size: 14px;
+}
+
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.cal-cell {
+  aspect-ratio: 1;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--text-color);
+  font-size: 11px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 3px;
+}
+
+.cal-cell.blank {
+  background: none;
+}
+
+.cal-cell.today {
+  box-shadow: 0 0 0 2px var(--button-color) inset;
+}
