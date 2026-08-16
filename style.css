@@ -42,7 +42,7 @@ body {
   height: auto;
   border-radius: 6px;
 }
-.mood-rect {
+.mood-rect, .tracker-rect, .entries {
   width: 500px;
   padding: 20px;
   background-color: var(--extra-color); 
