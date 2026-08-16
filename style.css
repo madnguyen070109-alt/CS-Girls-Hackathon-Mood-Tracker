@@ -28,10 +28,12 @@ body {
   border-radius: 6px;
   cursor: pointer;
   object-fit: cover;
-  width: 30px;
+  width:auto;
   padding: 5px;
 }
-.button:hover {
+
+
+.button:hover, .mood-button:hover {
   background-color: var(--button-color-hover);
 }
 .mood-rect {
@@ -44,8 +46,10 @@ body {
   border: 2px solid #1d84b5;
 }
 .mood-rect img {
+  background-color: var(--button-color);
   width: 60px;
   height: auto;
+  border-radius: 6px;
 }
 
 
