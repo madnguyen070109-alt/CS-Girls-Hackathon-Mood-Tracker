@@ -16,8 +16,9 @@ const ok = document.getElementById("ok");
 const happy = document.getElementById("happy");
 const great = document.getElementById("great");
 const moodButtons = [angry, upset, ok, happy, great];
-  const player = document.getElementById("player");
-  let current = 0;
+const player = document.getElementById("player");
+let current = 0;
+let selectedMood = null;
 
   function loadTrack(i) {
     player.src = tracks[i];
@@ -37,10 +38,10 @@ const moodButtons = [angry, upset, ok, happy, great];
     btn.classList.remove("active");
     btn.classList.add("button");
   });
-  // then activate the one that was clicked
-  el.classList.remove("button");
-  el.classList.add("active");
-
+    // then activate the one that was clicked
+    el.classList.remove("button");
+    el.classList.add("active");
+    selectedMood = mood;
 }
   document.getElementById("startBtn").addEventListener("click", () => {
     stopBtn.classList.add('button');
@@ -76,7 +77,28 @@ great.addEventListener("click", () => {
 });
 document.getElementById("submit").addEventListener("click", () =>
   {
-    const selectedMood = document.getElementsByClassName("active");
-    const d = new Date();
+    if (!selectedMood) {
+    alert("Pick a mood first!");
+    return;
+    }
+    const today = new Date().toISOString().slice(0, 10); // "2026-08-16"
+    const entries = JSON.parse(localStorage.getItem("moodEntries") || "{}");
+    entries[today] = { mood: selectedMood, ts: Date.now() };
+    localStorage.setItem("moodEntries", JSON.stringify(entries));
+
+    renderEntries();
   });
+  function renderEntries() {
+  const entries = JSON.parse(localStorage.getItem("moodEntries") || "{}");
+  const wrap = document.querySelector(".entries");
+  wrap.innerHTML = "";
+
+  Object.keys(entries).sort().reverse().forEach(date => {
+    const row = document.createElement("div");
+    row.textContent = `${date}: ${entries[date].mood}`;
+    wrap.appendChild(row);
+  });
+}
+
+renderEntries();
   
