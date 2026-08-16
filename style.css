@@ -33,6 +33,6 @@ button {
 }
 
 h1 {
-  color: var(--header-color);
+  color: var(--text-color);
   font-family: var(--font-family);
 }
